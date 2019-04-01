@@ -223,7 +223,7 @@ func IsCorruptedMnt(err error) bool {
 		underlyingError = pe.Err
 	}
 
-	return underlyingError == syscall.ENOTCONN || underlyingError == syscall.ESTALE || underlyingError == syscall.EIO
+	return underlyingError == syscall.ENOTCONN || underlyingError == syscall.ESTALE || underlyingError == syscall.EIO || underlyingError == syscall.EACCES
 }
 
 // GetSecretForPod locates secret by name in the pod's namespace and returns secret map
